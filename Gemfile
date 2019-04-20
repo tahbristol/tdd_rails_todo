@@ -38,6 +38,8 @@ gem 'bootsnap', '>= 1.1.0', require: false
 
 group :development, :test do
   gem 'rspec-rails'
+  gem 'database_cleaner'
+  gem 'pry'
 end
 
 group :development do
