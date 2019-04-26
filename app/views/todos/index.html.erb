@@ -1,6 +1,6 @@
 <%= link_to 'Add new todo', new_todo_path %>
 <ul class="todos">
   <% @todos.each do |todo| %>
-    <li><%= todo.title %> </li>
+    <li><%= todo.title %> - <%= link_to 'mark complete', '', class: 'markComplete' %></li>
   <% end %>
 </ul>
