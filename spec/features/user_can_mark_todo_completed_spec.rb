@@ -4,9 +4,7 @@ feature "User marks todo completed" do
   scenario "successfully", js: true do
     sign_in
     
-    click_on "Add new todo"
-    fill_in "todo[title]", with: "todo to complete"
-    click_on "Create Todo"
+    create_todo "Buy milk"
 
     click_on "mark complete"
     todo = find('.completed')
