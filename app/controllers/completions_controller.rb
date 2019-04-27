@@ -1,6 +1,10 @@
 class CompletionsController < ApplicationController
   def create
-    todo.complete!
+    if todo.completed?
+      todo.incomplete!
+    else
+      todo.complete!
+    end
     redirect_to todos_path
   end
   

@@ -25,3 +25,14 @@ describe Todo, "#complete!" do
     expect(todo).to be_completed
   end
 end
+
+describe Todo, "#incomplete!" do
+  it "undoes completed_at" do
+    user = User.create(email: 'example@gmail.com')
+    todo = Todo.create!(completed_at: Time.current, user_id: user.id)
+    
+    todo.incomplete!
+    
+    expect(todo).not_to be_completed
+  end
+end

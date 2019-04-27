@@ -9,6 +9,6 @@ feature "User marks todo completed" do
     click_on "mark complete"
     todo = find('.completed')
 
-    expect(page).to have_css('.todos li.completed') #have_css('.completed', text: "todo to complete")
+    expect(page).to display_completed_todo("Buy milk")
   end
 end
