@@ -12,3 +12,16 @@ describe Todo, "#completed?" do
     expect(todo).not_to be_completed
   end
 end
+
+describe Todo, "#complete!" do
+  it "updates completed_at" do
+    user = User.create(email: 'example@gmail.com')
+    todo = Todo.create!(completed_at: nil, user_id: user.id)
+    
+    todo.complete!
+    
+    #todo.reload
+    
+    expect(todo).to be_completed
+  end
+end
